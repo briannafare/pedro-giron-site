@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --midnight: #0F0A1F;
+  --fuego: #D62C26;
+  --fuego-dark: #B82420;
+  --oro: #D4A520;
+  --paper: #FAF9F5;
+  --stone: #5A554D;
+  --haze: #E8E3DC;
+  --calma: #2D6B78;
+  --calma-light: rgba(45,107,120,0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  color: var(--midnight);
+  background: var(--paper);
+}
+
+::selection {
+  background: rgba(214, 44, 38, 0.15);
+  color: var(--midnight);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
