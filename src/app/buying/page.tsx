@@ -7,10 +7,10 @@ import Footer from "@/components/Footer";
 import InnerHero from "@/components/InnerHero";
 import ScrollReveal from "@/components/ScrollReveal";
 import { BUYING_PAGE, TESTIMONIALS, CTA_BAND, SITE } from "@/lib/data";
-import { FileWarning, Languages, Clock, ChevronDown, ArrowRight } from "lucide-react";
+import { FileWarning, DollarSign, Clock, ChevronDown, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
-const PAIN_ICONS: Record<string, any> = { FileWarning, Languages, Clock };
+const PAIN_ICONS: Record<string, any> = { FileWarning, DollarSign, Clock };
 
 export default function BuyingPage() {
   const { t } = useLang();

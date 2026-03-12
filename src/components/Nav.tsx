@@ -5,10 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLang } from "@/lib/i18n";
 import { NAV_LINKS, SITE } from "@/lib/data";
+import LangToggle from "@/components/LangToggle";
 import { Menu, X, Phone } from "lucide-react";
 
 export default function Nav() {
-  const { lang, toggle, t } = useLang();
+  const { lang, t } = useLang();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -16,13 +17,13 @@ export default function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-midnight/95 backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2">
           <span className="font-display text-[15px] font-extrabold text-white tracking-tight">
             MI CASA <span className="text-fuego">DREAM</span>
           </span>
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav links */}
         <div className="hidden lg:flex items-center gap-7">
           {NAV_LINKS.map((link) => (
             <Link
@@ -39,49 +40,27 @@ export default function Nav() {
           ))}
         </div>
 
-        {/* Right side */}
-        <div className="flex items-center gap-3">
-          {/* Google stars — desktop only */}
-          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-white/30 mr-1">
+        {/* Right side — Toggle is visually prominent */}
+        <div className="flex items-center gap-4">
+          {/* Stars — subtle, desktop only */}
+          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-white/25">
             <span className="text-oro">★ {SITE.google.rating}</span>
             <span>·</span>
-            <span>{SITE.google.count} reviews</span>
+            <span>{SITE.google.count}</span>
           </div>
 
-          {/* Language toggle */}
-          <button
-            onClick={toggle}
-            className="flex items-center border border-fuego/25 rounded-full overflow-hidden"
-          >
-            <span
-              className={`text-[10px] font-semibold tracking-wide px-3 py-1.5 transition-all ${
-                lang === "en"
-                  ? "bg-fuego/15 text-fuego"
-                  : "text-white/30"
-              }`}
-            >
-              EN
-            </span>
-            <span
-              className={`text-[10px] font-semibold tracking-wide px-3 py-1.5 transition-all ${
-                lang === "es"
-                  ? "bg-fuego/15 text-fuego"
-                  : "text-white/30"
-              }`}
-            >
-              ES
-            </span>
-          </button>
+          {/* Language toggle — prominent */}
+          <LangToggle size="md" variant="dark" />
 
           {/* CTA — desktop */}
           <Link
             href="/contact"
             className="hidden md:inline-flex items-center gap-2 bg-fuego text-white text-[12px] font-semibold rounded-lg px-5 py-2.5 hover:bg-fuego-dark transition-colors"
           >
-            {t("Book a Free Call", "Agendar Llamada")}
+            {t("Book a Free Call", "Agenda Llamada")}
           </Link>
 
-          {/* Mobile menu toggle */}
+          {/* Mobile menu */}
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden text-white/60 hover:text-white p-1"
@@ -101,22 +80,26 @@ export default function Nav() {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className={`text-[15px] font-medium py-3 border-b border-white/5 transition-colors ${
-                  pathname === link.href
-                    ? "text-white"
-                    : "text-white/40"
+                  pathname === link.href ? "text-white" : "text-white/40"
                 }`}
               >
                 {lang === "en" ? link.en : link.es}
               </Link>
             ))}
           </div>
-          <div className="mt-6 flex flex-col gap-3">
+
+          {/* Mobile: Toggle gets its own row, centered, bigger */}
+          <div className="flex justify-center mt-6 mb-4">
+            <LangToggle size="lg" variant="dark" />
+          </div>
+
+          <div className="flex flex-col gap-3">
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
               className="bg-fuego text-white text-center text-[14px] font-semibold rounded-lg px-5 py-3.5 hover:bg-fuego-dark transition-colors"
             >
-              {t("Book a Free Call", "Agendar Llamada Gratis")}
+              {t("Book a Free Call", "Agenda Tu Llamada")}
             </Link>
             <a
               href={`tel:${SITE.phone.replace(/[^0-9]/g, "")}`}
@@ -125,11 +108,6 @@ export default function Nav() {
               <Phone size={14} />
               {SITE.phone}
             </a>
-          </div>
-          <div className="mt-4 flex items-center gap-1.5 text-[12px] text-white/25 justify-center">
-            <span className="text-oro">★ {SITE.google.rating}</span>
-            <span>·</span>
-            <span>{SITE.google.count} {t("reviews", "reseñas")}</span>
           </div>
         </div>
       )}

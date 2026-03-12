@@ -24,26 +24,28 @@ export const NAV_LINKS = [
   { href: "/contact", en: "Contact", es: "Contacto" },
 ];
 
+// ─── HOME PAGE ────────────────────────────────────
+
 export const HERO = {
   overline: { en: "Salem, Oregon", es: "Salem, Oregon" },
-  headline_top: { en: "YOUR NEXT CHAPTER", es: "TU PRÓXIMO CAPÍTULO" },
+  headline_top: { en: "YOUR NEXT HOME", es: "TU PRÓXIMA CASA" },
   headline_accent: {
-    en: "starts with the right guide",
-    es: "empieza con el guía correcto",
+    en: "is closer than you think",
+    es: "está más cerca de lo que piensas",
   },
   sub: {
-    en: "Pedro Giron helps families across the Willamette Valley buy and sell homes — in English or Spanish. No pressure. Just results.",
-    es: "Pedro Giron ayuda familias en el Valle de Willamette a comprar y vender casas — en inglés o español. Sin presión. Solo resultados.",
+    en: "Pedro Giron helps families across the Willamette Valley find, buy, and sell homes. No pressure. No runaround. Just someone in your corner who gets the deal done.",
+    es: "Pedro Giron ayuda a familias en el Valle de Willamette a encontrar, comprar y vender casas. Sin presiones. Sin rodeos. Alguien de tu lado que cierra el trato.",
   },
-  cta: { en: "Book a Free Call", es: "Agendar Llamada Gratis" },
+  cta: { en: "Book a Free Call", es: "Agenda Tu Llamada" },
   cta2: { en: "(503) 949-3925", es: "(503) 949-3925" },
 };
 
 export const STATS = [
   { value: "5.0", en: "Google Rating", es: "Calificación Google", icon: "Star" },
   { value: "18", en: "Five-Star Reviews", es: "Reseñas 5 Estrellas", icon: "MessageCircle" },
-  { value: "2", en: "Languages", es: "Idiomas", icon: "Globe" },
-  { value: "100%", en: "Recommend Rate", es: "Tasa de Recomendación", icon: "ThumbsUp" },
+  { value: "<2mo", en: "Avg. Close Time", es: "Tiempo Promedio de Cierre", icon: "Clock" },
+  { value: "100%", en: "Client Satisfaction", es: "Satisfacción del Cliente", icon: "ThumbsUp" },
 ];
 
 export const SERVICES = [
@@ -51,8 +53,8 @@ export const SERVICES = [
     icon: "Home",
     title: { en: "Buy Your Dream", es: "Compra Tu Sueño" },
     desc: {
-      en: "First-time buyer or seasoned investor — Pedro walks you through every step. No pressure, no confusion, no lost-in-translation moments.",
-      es: "Primera vez comprando o inversionista con experiencia — Pedro te guía en cada paso. Sin presión, sin confusión, sin momentos perdidos en la traducción.",
+      en: "First-time buyer or experienced investor — Pedro walks you through every step so nothing catches you off guard. You'll know exactly what's happening and why.",
+      es: "Ya sea tu primera casa o ya tengas experiencia — Pedro te acompaña en cada paso para que nada te tome por sorpresa. Siempre vas a saber qué pasa y por qué.",
     },
     href: "/buying",
     cta: { en: "Start Your Search", es: "Comienza Tu Búsqueda" },
@@ -61,46 +63,46 @@ export const SERVICES = [
     icon: "TrendingUp",
     title: { en: "Sell With Confidence", es: "Vende Con Confianza" },
     desc: {
-      en: "Get the price your home deserves. Pedro handles pricing strategy, bilingual marketing, and relentless negotiation — so you don't leave money on the table.",
-      es: "Obtén el precio que tu casa merece. Pedro se encarga de estrategia de precios, marketing bilingüe y negociación implacable — para que no dejes dinero en la mesa.",
+      en: "Get the price your home deserves. Pedro handles pricing, marketing, and negotiation — so you don't leave money on the table.",
+      es: "Obtén el precio que tu casa merece. Pedro se encarga de la valuación, promoción y negociación — para que no dejes ni un dólar en la mesa.",
     },
     href: "/selling",
-    cta: { en: "Get a Free Valuation", es: "Obtén Valuación Gratis" },
+    cta: { en: "Get a Free Valuation", es: "Solicita Tu Valuación" },
   },
   {
     icon: "Mountain",
     title: { en: "Land & Acreage", es: "Terrenos y Acres" },
     desc: {
-      en: "Looking for land in the Willamette Valley? From rural acreage to residential lots — Pedro finds the right ground for your next chapter.",
-      es: "¿Buscas terreno en el Valle de Willamette? Desde acres rurales hasta lotes residenciales — Pedro encuentra el terreno para tu próximo capítulo.",
+      en: "Looking for land in the Willamette Valley? From rural acreage to residential lots — Pedro finds the right ground for what you're building next.",
+      es: "¿Buscas terreno en el Valle de Willamette? Desde acres rurales hasta lotes residenciales — Pedro encuentra el terreno ideal para lo que viene.",
     },
     href: "/contact",
-    cta: { en: "Explore Options", es: "Explorar Opciones" },
+    cta: { en: "Explore Options", es: "Explora Opciones" },
   },
 ];
 
 export const WHY_PEDRO = {
-  overline: { en: "Why Pedro", es: "Por Qué Pedro" },
+  overline: { en: "Why Pedro", es: "¿Por Qué Pedro?" },
   headline: { en: "Calm under pressure.", es: "Tranquilo bajo presión." },
   headline_accent: { en: "Relentless when it counts.", es: "Implacable cuando importa." },
   body: {
-    en: "Buying or selling a home is one of the biggest decisions you'll make. Pedro Giron believes you deserve someone who communicates clearly, fights for your best deal, and never makes you feel rushed. In English or Spanish — whichever feels like home.",
-    es: "Comprar o vender una casa es una de las decisiones más grandes que tomarás. Pedro Giron cree que mereces a alguien que se comunique con claridad, luche por tu mejor negocio y nunca te haga sentir apurado. En inglés o español — el que se sienta como tu hogar.",
+    en: "Buying or selling a home is one of the biggest financial decisions you'll make. Pedro believes you deserve an agent who actually picks up the phone, explains every document, fights for the best deal, and never makes you feel rushed into a decision you're not ready for.",
+    es: "Comprar o vender una casa es una de las decisiones financieras más grandes de tu vida. Pedro cree que mereces un agente que conteste el teléfono, te explique cada documento, pelee por el mejor trato y nunca te presione a tomar una decisión para la que no estás listo.",
   },
   pillars: [
     {
-      title: { en: "Your Language", es: "Tu Idioma" },
+      title: { en: "Clear Communication", es: "Comunicación Clara" },
       desc: {
-        en: "Full professional service in English or Spanish. No translators, no miscommunication — just clear, direct guidance.",
-        es: "Servicio profesional completo en inglés o español. Sin traductores, sin malentendidos — solo orientación clara y directa.",
+        en: "You'll always know what's happening with your deal. Every document, every number, every decision — explained clearly, no jargon.",
+        es: "Siempre vas a saber qué está pasando con tu trato. Cada documento, cada número, cada decisión — explicado con claridad, sin tecnicismos.",
       },
       icon: "Globe",
     },
     {
       title: { en: "Your Pace", es: "Tu Ritmo" },
       desc: {
-        en: "Pedro never rushes a client. Your timeline is your timeline. Patient, thorough, available when you need him.",
-        es: "Pedro nunca apresura a un cliente. Tu tiempo es tu tiempo. Paciente, minucioso, disponible cuando lo necesitas.",
+        en: "Pedro never rushes a client. Your timeline is your timeline. Patient, thorough, and available when you need him.",
+        es: "Pedro nunca apresura a un cliente. Tu tiempo es tu tiempo. Paciente, minucioso y disponible cuando lo necesitas.",
       },
       icon: "Clock",
     },
@@ -108,7 +110,7 @@ export const WHY_PEDRO = {
       title: { en: "Your Advocate", es: "Tu Defensor" },
       desc: {
         en: "In negotiation, Pedro is relentless. He's won competitive multiple-offer situations and fights for every dollar on your behalf.",
-        es: "En negociación, Pedro es implacable. Ha ganado situaciones competitivas de múltiples ofertas y lucha por cada dólar en tu nombre.",
+        es: "En la negociación, Pedro es implacable. Ha ganado en situaciones con múltiples ofertas y pelea por cada dólar a tu favor.",
       },
       icon: "Shield",
     },
@@ -119,14 +121,14 @@ export const WHY_PEDRO = {
 export const DREAM_SECTION = {
   overline: { en: "Mi Casa Dream", es: "Mi Casa Dream" },
   headline: {
-    en: "Real estate, in your language.",
-    es: "Bienes raíces, en tu idioma.",
+    en: "Homeownership changes everything.",
+    es: "Ser dueño de casa lo cambia todo.",
   },
   body: {
-    en: "\"Mi Casa\" is home. \"Dream\" is where you're going. Pedro built this brand on a simple idea: everyone deserves to understand every word, every clause, every number when they're making the biggest purchase of their life. No detail lost in translation. No question too small. Your dream, your language.",
-    es: "\"Mi Casa\" es hogar. \"Dream\" es a dónde vas. Pedro construyó esta marca con una idea simple: todos merecen entender cada palabra, cada cláusula, cada número cuando están haciendo la compra más grande de su vida. Ningún detalle perdido en la traducción. Ninguna pregunta es demasiado pequeña. Tu sueño, tu idioma.",
+    en: "A home isn't just a building. It's where your kids grow up, where holidays happen, where you build something that's actually yours. Pedro started Mi Casa Dream because he believes every family in the Willamette Valley deserves someone who'll fight to make that happen. Not someday. Now.",
+    es: "Una casa no es solo un edificio. Es donde crecen tus hijos, donde se celebran las fiestas, donde construyes algo que realmente es tuyo. Pedro creó Mi Casa Dream porque cree que cada familia en el Valle de Willamette merece a alguien que luche para hacerlo realidad. No algún día. Ahora.",
   },
-  cta: { en: "Schedule Your Consultation", es: "Agenda Tu Consulta" },
+  cta: { en: "Take the First Step", es: "Da el Primer Paso" },
 };
 
 export const TESTIMONIALS = [
@@ -159,79 +161,81 @@ export const TESTIMONIALS = [
 export const FAQ_HOME = [
   {
     q: {
-      en: "Do I need to speak Spanish to work with Pedro?",
-      es: "¿Necesito hablar inglés para trabajar con Pedro?",
+      en: "What's the first step to buying a home in Salem?",
+      es: "¿Cuál es el primer paso para comprar casa en Salem?",
     },
     a: {
-      en: "Not at all. Pedro is fully bilingual and provides the same quality service in both English and Spanish. He works with clients of all backgrounds across Salem and the Willamette Valley.",
-      es: "Para nada. Pedro es completamente bilingüe y proporciona el mismo servicio de calidad en inglés y español. Trabaja con clientes de todos los orígenes en Salem y el Valle de Willamette.",
+      en: "Book a free call with Pedro. He'll walk you through your budget, connect you with lenders for pre-approval, and build a search plan based on what you actually need.",
+      es: "Agenda una llamada gratis con Pedro. Te explica tu presupuesto, te conecta con prestamistas para pre-aprobación y arma un plan de búsqueda basado en lo que realmente necesitas.",
     },
   },
   {
     q: {
-      en: "What areas in Oregon does Pedro serve?",
-      es: "¿Qué áreas de Oregon atiende Pedro?",
+      en: "What areas does Pedro cover?",
+      es: "¿Qué áreas cubre Pedro?",
     },
     a: {
-      en: "Pedro serves Salem, Keizer, and the greater Willamette Valley. If you're unsure whether your area is covered, contact Pedro directly at (503) 949-3925.",
-      es: "Pedro atiende Salem, Keizer y el Valle de Willamette. Si no estás seguro si tu área está cubierta, contacta a Pedro al (503) 949-3925.",
+      en: "Salem, Keizer, and the greater Willamette Valley. Not sure if your area is covered? Call (503) 949-3925 — Pedro will give you a straight answer.",
+      es: "Salem, Keizer y todo el Valle de Willamette. ¿No sabes si tu área está cubierta? Llama al (503) 949-3925 — Pedro te da una respuesta directa.",
     },
   },
   {
     q: {
-      en: "Is Pedro a good fit for first-time homebuyers in Salem?",
-      es: "¿Pedro es buena opción para compradores de primera vez en Salem?",
+      en: "I've never bought a home before — is that okay?",
+      es: "Nunca he comprado casa — ¿está bien eso?",
     },
     a: {
-      en: "Absolutely. Many of Pedro's clients are first-time buyers. He walks you through the entire process — from pre-approval to closing — at your pace, with zero pressure. His 18 five-star reviews reflect that.",
-      es: "Absolutamente. Muchos clientes de Pedro son compradores de primera vez. Te guía por todo el proceso — desde la pre-aprobación hasta el cierre — a tu ritmo, sin presión. Sus 18 reseñas de 5 estrellas lo reflejan.",
+      en: "More than okay. A big chunk of Pedro's clients are first-time buyers. He walks you through pre-approval, the search, offers, inspections, and closing — step by step, at your pace.",
+      es: "Más que bien. Muchos de los clientes de Pedro compran por primera vez. Te guía por la pre-aprobación, la búsqueda, las ofertas, inspecciones y cierre — paso a paso, a tu ritmo.",
     },
   },
   {
     q: {
-      en: "How much does it cost to work with Pedro as a buyer?",
-      es: "¿Cuánto cuesta trabajar con Pedro como comprador?",
+      en: "Does it cost me anything to work with Pedro as a buyer?",
+      es: "¿Me cuesta algo trabajar con Pedro como comprador?",
     },
     a: {
-      en: "Buyer consultations are completely free. In most transactions, the seller pays agent commissions, so there's typically no direct cost to you as a buyer.",
-      es: "Las consultas para compradores son completamente gratuitas. En la mayoría de las transacciones, el vendedor paga las comisiones, por lo que típicamente no hay costo directo para ti como comprador.",
+      en: "The consultation is free. In most transactions, the seller covers agent commissions — so there's typically no direct cost to you as a buyer.",
+      es: "La consulta es gratis. En la mayoría de las transacciones, el vendedor cubre las comisiones del agente — así que normalmente no hay costo directo para ti como comprador.",
     },
   },
   {
     q: {
-      en: "How quickly does Pedro respond to messages?",
-      es: "¿Qué tan rápido responde Pedro a los mensajes?",
+      en: "How fast does Pedro actually respond?",
+      es: "¿Qué tan rápido responde Pedro realmente?",
     },
     a: {
-      en: "Fast. Clients and industry partners consistently highlight his responsiveness. In real estate, timing matters — Pedro makes communication a priority.",
-      es: "Rápido. Clientes y socios de la industria consistentemente destacan su capacidad de respuesta. En bienes raíces, el tiempo importa — Pedro hace de la comunicación una prioridad.",
+      en: "Fast. His clients and industry partners both say it — Pedro picks up. In real estate, timing can make or break a deal, and he treats your questions like they matter. Because they do.",
+      es: "Rápido. Sus clientes y socios de la industria lo dicen — Pedro contesta. En bienes raíces, el tiempo puede hacer o deshacer un trato, y él trata tus preguntas como si importaran. Porque importan.",
     },
   },
   {
     q: {
-      en: "What neighborhoods in Salem does Pedro recommend for families?",
-      es: "¿Qué vecindarios en Salem recomienda Pedro para familias?",
+      en: "What Salem neighborhoods are best for families?",
+      es: "¿Cuáles son los mejores vecindarios de Salem para familias?",
     },
     a: {
-      en: "Salem has many family-friendly neighborhoods including South Salem, West Salem, and nearby Keizer. Pedro can recommend specific areas during a free consultation based on your budget, commute, and school preferences.",
-      es: "Salem tiene muchos vecindarios para familias incluyendo South Salem, West Salem y Keizer cercano. Pedro puede recomendar áreas específicas durante una consulta gratuita según tu presupuesto, transporte y preferencias escolares.",
+      en: "South Salem has top-rated schools. West Salem has newer developments with river access. Keizer is suburban with easy Salem access. Pedro can narrow it down based on your budget, commute, and what matters to your family.",
+      es: "South Salem tiene las mejores escuelas. West Salem tiene desarrollos nuevos con acceso al río. Keizer es suburbano con fácil acceso a Salem. Pedro puede ayudarte a elegir según tu presupuesto, transporte y lo que importa para tu familia.",
     },
   },
 ];
 
+// ─── BUYING PAGE ──────────────────────────────────
+
 export const BUYING_PAGE = {
   hero: {
-    overline: { en: "Buying Services", es: "Servicios de Compra" },
-    headline: { en: "THE DREAM STARTS HERE", es: "EL SUEÑO EMPIEZA AQUÍ" },
+    overline: { en: "Buying", es: "Comprar" },
+    headline: { en: "FIND THE HOME", es: "ENCUENTRA LA CASA" },
     headline_accent: {
-      en: "and Pedro walks you through every step",
-      es: "y Pedro te guía en cada paso",
+      en: "your family deserves",
+      es: "que tu familia merece",
     },
     sub: {
-      en: "Whether it's your first home or your fifth, Pedro makes the process feel simple — in the language you're most comfortable with.",
-      es: "Ya sea tu primera casa o la quinta, Pedro hace que el proceso se sienta simple — en el idioma con el que te sientas más cómodo.",
+      en: "Whether it's your first home or your next one, Pedro makes the process feel simple. Every step explained. Every question answered. Every deal fought for.",
+      es: "Ya sea tu primera casa o la siguiente, Pedro hace que el proceso se sienta simple. Cada paso explicado. Cada pregunta respondida. Cada trato peleado.",
     },
-    cta: { en: "Schedule a Free Buyer Consultation", es: "Agendar Consulta Gratuita de Compra" },
+    cta: { en: "Schedule a Free Consultation", es: "Agenda Tu Consulta Gratis" },
   },
   pain: {
     headline: { en: "Buying a home can feel overwhelming", es: "Comprar casa puede sentirse abrumador" },
@@ -240,145 +244,149 @@ export const BUYING_PAGE = {
         icon: "FileWarning",
         title: { en: "Confusing Paperwork", es: "Papeleo Confuso" },
         desc: {
-          en: "Dozens of documents, legal terms, and fine print that feel impossible to navigate alone.",
-          es: "Docenas de documentos, términos legales y letra pequeña que se sienten imposibles de navegar solo.",
+          en: "Dozens of documents, legal terms, and fine print that feel impossible to navigate without someone who'll break it all down for you.",
+          es: "Docenas de documentos, términos legales y letra pequeña que se sienten imposibles de navegar sin alguien que te lo explique todo.",
         },
       },
       {
-        icon: "Languages",
-        title: { en: "Language Barriers", es: "Barreras de Idioma" },
+        icon: "DollarSign",
+        title: { en: "Hidden Costs & Surprises", es: "Costos Ocultos y Sorpresas" },
         desc: {
-          en: "When your agent only speaks English, critical details get lost. You deserve to understand every clause.",
-          es: "Cuando tu agente solo habla inglés, detalles críticos se pierden. Mereces entender cada cláusula.",
+          en: "Closing costs, inspection fees, appraisal gaps — the expenses that blindside you if your agent doesn't prepare you upfront.",
+          es: "Costos de cierre, inspecciones, diferencias de avalúo — los gastos que te sorprenden si tu agente no te prepara desde el principio.",
         },
       },
       {
         icon: "Clock",
         title: { en: "Feeling Pressured", es: "Sentirte Presionado" },
         desc: {
-          en: "Some agents push fast decisions to close their deal. You need someone who works at your pace.",
-          es: "Algunos agentes presionan decisiones rápidas para cerrar su negocio. Necesitas alguien que trabaje a tu ritmo.",
+          en: "Some agents push fast decisions to close their deal. You need someone who works at your pace and puts your interests first.",
+          es: "Algunos agentes presionan decisiones rápidas para cerrar su negocio. Necesitas alguien que trabaje a tu ritmo y ponga tus intereses primero.",
         },
       },
     ],
   },
   process: {
-    headline: { en: "Your Dream, Step by Step", es: "Tu Sueño, Paso a Paso" },
+    headline: { en: "Your Path to the Keys", es: "Tu Camino a las Llaves" },
     steps: [
       {
         title: { en: "Free Consultation", es: "Consulta Gratuita" },
         desc: {
-          en: "We talk about your goals, budget, and timeline. In person, by phone, or video. No commitment.",
-          es: "Hablamos sobre tus metas, presupuesto y tiempo. En persona, por teléfono o video. Sin compromiso.",
+          en: "We talk about your goals, budget, and timeline. In person, by phone, or video. No commitment, no sales pitch.",
+          es: "Hablamos de tus metas, presupuesto y tiempos. En persona, por teléfono o video. Sin compromiso, sin discurso de ventas.",
         },
       },
       {
-        title: { en: "Get Pre-Approved", es: "Obtener Pre-Aprobación" },
+        title: { en: "Get Pre-Approved", es: "Obtén Tu Pre-Aprobación" },
         desc: {
-          en: "Pedro connects you with trusted lenders. Pre-approval tells you exactly what you can afford.",
-          es: "Pedro te conecta con prestamistas confiables. La pre-aprobación te dice exactamente cuánto puedes pagar.",
+          en: "Pedro connects you with trusted lenders who'll work with your situation. Pre-approval tells you exactly what you can afford — and makes your offers stronger.",
+          es: "Pedro te conecta con prestamistas confiables que trabajan con tu situación. La pre-aprobación te dice exactamente cuánto puedes pagar — y hace tus ofertas más fuertes.",
         },
       },
       {
-        title: { en: "Find Your Home", es: "Encontrar Tu Casa" },
+        title: { en: "Find Your Home", es: "Encuentra Tu Casa" },
         desc: {
-          en: "Pedro searches, schedules showings, and gives honest assessments. When you find the one — he submits a strong offer.",
-          es: "Pedro busca, agenda visitas y da evaluaciones honestas. Cuando encuentres la indicada — presenta una oferta fuerte.",
+          en: "Pedro searches, schedules showings, and gives you honest assessments — not just what you want to hear. When you find the one, he submits a strong, competitive offer.",
+          es: "Pedro busca, agenda visitas y te da evaluaciones honestas — no solo lo que quieres escuchar. Cuando encuentres la indicada, presenta una oferta fuerte y competitiva.",
         },
       },
       {
-        title: { en: "Close With Confidence", es: "Cerrar Con Confianza" },
+        title: { en: "Close With Confidence", es: "Cierra Con Confianza" },
         desc: {
-          en: "From accepted offer through inspection and final walkthrough — Pedro handles the details. You get the keys.",
-          es: "Desde la oferta aceptada hasta la inspección y recorrido final — Pedro maneja los detalles. Tú recibes las llaves.",
+          en: "From accepted offer through inspection, appraisal, and final walkthrough — Pedro handles the details. You get the keys.",
+          es: "Desde la oferta aceptada hasta la inspección, avalúo y recorrido final — Pedro maneja los detalles. Tú recibes las llaves.",
         },
       },
     ],
   },
   faq: [
     {
-      q: { en: "What should I do first when buying a home in Salem?", es: "¿Qué debo hacer primero al comprar casa en Salem?" },
-      a: { en: "Start with a free consultation with Pedro. He'll help you understand your budget, connect you with lenders for pre-approval, and create a search plan tailored to the Salem market.", es: "Empieza con una consulta gratuita con Pedro. Te ayudará a entender tu presupuesto, conectarte con prestamistas para la pre-aprobación y crear un plan de búsqueda adaptado al mercado de Salem." },
+      q: { en: "What should I do first when buying a home in Salem?", es: "¿Qué debo hacer primero para comprar casa en Salem?" },
+      a: { en: "Book a free call with Pedro. He'll help you understand your budget, connect you with lenders for pre-approval, and create a search plan tailored to what you need in the Salem market.", es: "Agenda una llamada gratis con Pedro. Te ayuda a entender tu presupuesto, te conecta con prestamistas para pre-aprobación y crea un plan de búsqueda adaptado a lo que necesitas en el mercado de Salem." },
     },
     {
       q: { en: "Are there programs for first-time homebuyers in Oregon?", es: "¿Hay programas para compradores de primera vez en Oregon?" },
-      a: { en: "Yes. Oregon Housing and Community Services (OHCS) offers first-time buyer programs including down payment assistance. Pedro can help you explore which ones you qualify for.", es: "Sí. Oregon Housing and Community Services (OHCS) ofrece programas para compradores de primera vez incluyendo asistencia con el enganche. Pedro puede ayudarte a explorar para cuáles calificas." },
+      a: { en: "Yes. Oregon Housing and Community Services (OHCS) offers first-time buyer programs including down payment assistance. Pedro can help you figure out which ones you qualify for.", es: "Sí. Oregon Housing and Community Services (OHCS) ofrece programas para compradores primerizos incluyendo asistencia con el enganche. Pedro te ayuda a determinar para cuáles calificas." },
     },
     {
       q: { en: "How long does it take to buy a home in Salem?", es: "¿Cuánto tiempo toma comprar una casa en Salem?" },
-      a: { en: "Most purchases take 30 to 60 days from accepted offer to closing. Pedro has helped clients close in under two months from first consultation to keys.", es: "La mayoría de las compras toman de 30 a 60 días desde la oferta aceptada hasta el cierre. Pedro ha ayudado a clientes a cerrar en menos de dos meses desde la primera consulta hasta las llaves." },
+      a: { en: "Most purchases take 30 to 60 days from accepted offer to closing. Pedro has helped clients go from first call to keys in under two months.", es: "La mayoría de las compras toman de 30 a 60 días desde la oferta aceptada hasta el cierre. Pedro ha ayudado a clientes a ir de la primera llamada a las llaves en menos de dos meses." },
     },
     {
-      q: { en: "What are the best Salem neighborhoods for families?", es: "¿Cuáles son los mejores vecindarios de Salem para familias?" },
-      a: { en: "South Salem has top-rated schools. West Salem offers newer developments with river access. Keizer has a suburban feel with easy access to Salem. Pedro recommends based on your priorities.", es: "South Salem tiene escuelas de alto nivel. West Salem ofrece desarrollos nuevos con acceso al río. Keizer tiene un ambiente suburbano con fácil acceso a Salem. Pedro recomienda según tus prioridades." },
+      q: { en: "What Salem neighborhoods are good for families?", es: "¿Cuáles vecindarios de Salem son buenos para familias?" },
+      a: { en: "South Salem has top-rated schools. West Salem has newer developments with river access. Keizer is suburban with easy Salem access. Pedro recommends based on your budget, commute, and priorities.", es: "South Salem tiene las mejores escuelas. West Salem tiene desarrollos nuevos con acceso al río. Keizer tiene un ambiente suburbano con fácil acceso a Salem. Pedro recomienda según tu presupuesto, transporte y prioridades." },
     },
   ],
 };
 
+// ─── SELLING PAGE ─────────────────────────────────
+
 export const SELLING_PAGE = {
   hero: {
-    overline: { en: "Selling Services", es: "Servicios de Venta" },
+    overline: { en: "Selling", es: "Vender" },
     headline: { en: "YOUR HOME DESERVES", es: "TU CASA MERECE" },
     headline_accent: {
       en: "the price it's worth",
       es: "el precio que vale",
     },
     sub: {
-      en: "Pedro combines sharp pricing strategy with bilingual marketing to reach the widest pool of qualified buyers in the Willamette Valley.",
-      es: "Pedro combina estrategia de precios inteligente con marketing bilingüe para alcanzar el mayor grupo de compradores calificados en el Valle de Willamette.",
+      en: "Pedro combines sharp pricing strategy with aggressive marketing to reach the widest pool of qualified buyers in the Willamette Valley. You get the best deal. He handles the rest.",
+      es: "Pedro combina estrategia de precios inteligente con marketing agresivo para alcanzar el mayor grupo de compradores calificados en el Valle de Willamette. Tú obtienes el mejor trato. Él se encarga del resto.",
     },
-    cta: { en: "Request a Free Home Valuation", es: "Solicitar Valuación Gratuita" },
+    cta: { en: "Request a Free Home Valuation", es: "Solicita Tu Valuación Gratis" },
   },
   features: [
     {
       icon: "TrendingUp",
       title: { en: "Strategic Pricing", es: "Precios Estratégicos" },
       desc: {
-        en: "Pedro analyzes Salem-area sales, market trends, and your home's unique features to price it right — attracting buyers without leaving money on the table.",
-        es: "Pedro analiza ventas del área de Salem, tendencias del mercado y las características únicas de tu casa para fijar el precio correcto.",
+        en: "Pedro analyzes recent Salem-area sales, market trends, and your home's unique features to price it right — not so high it sits, not so low you lose money.",
+        es: "Pedro analiza ventas recientes del área de Salem, tendencias del mercado y las características únicas de tu casa para fijar el precio correcto — ni tan alto que no se venda, ni tan bajo que pierdas dinero.",
       },
     },
     {
       icon: "Megaphone",
-      title: { en: "Bilingual Marketing", es: "Marketing Bilingüe" },
+      title: { en: "Wider Reach", es: "Mayor Alcance" },
       desc: {
-        en: "Your listing reaches both English and Spanish-speaking buyers — expanding your pool and increasing competition for your home.",
-        es: "Tu listado llega tanto a compradores de habla inglesa como española — ampliando tu grupo y aumentando la competencia por tu casa.",
+        en: "Pedro markets your property to the widest possible audience across the Willamette Valley — more eyes on your listing means more competition and a better price for you.",
+        es: "Pedro promociona tu propiedad al público más amplio posible en el Valle de Willamette — más ojos en tu listado significa más competencia y un mejor precio para ti.",
       },
     },
     {
       icon: "Shield",
       title: { en: "Relentless Negotiation", es: "Negociación Implacable" },
       desc: {
-        en: "Pedro has won competitive multiple-offer situations and brings that same intensity to the seller side. He fights for every dollar.",
-        es: "Pedro ha ganado situaciones competitivas de múltiples ofertas y trae esa misma intensidad al lado del vendedor. Lucha por cada dólar.",
+        en: "Pedro has won competitive multiple-offer situations for his buyers. He brings that same intensity when he's fighting to get you top dollar on the sell side.",
+        es: "Pedro ha ganado situaciones competitivas con múltiples ofertas para sus compradores. Trae esa misma intensidad cuando pelea para conseguirte el mejor precio como vendedor.",
       },
     },
   ],
   process: {
     headline: { en: "From Listing to Closing", es: "De Publicación a Cierre" },
     steps: [
-      { title: { en: "Free Home Valuation", es: "Valuación Gratuita" }, desc: { en: "Pedro visits your home and provides a data-backed market valuation.", es: "Pedro visita tu casa y proporciona una valuación respaldada por datos del mercado." } },
-      { title: { en: "Prepare & Stage", es: "Preparar y Presentar" }, desc: { en: "Get recommendations on what to fix or improve to maximize your home's value.", es: "Recibe recomendaciones sobre qué reparar o mejorar para maximizar el valor de tu casa." } },
-      { title: { en: "List & Market", es: "Publicar y Promocionar" }, desc: { en: "Professional photography, bilingual descriptions, and targeted marketing across the Valley.", es: "Fotografía profesional, descripciones bilingües y marketing dirigido en el Valle." } },
-      { title: { en: "Negotiate & Close", es: "Negociar y Cerrar" }, desc: { en: "Pedro manages offers, negotiations, and closing logistics. You focus on what's next.", es: "Pedro maneja ofertas, negociaciones y logística de cierre. Tú te enfocas en lo que sigue." } },
+      { title: { en: "Free Home Valuation", es: "Valuación Gratuita" }, desc: { en: "Pedro visits your home and gives you a data-backed market valuation. No obligation.", es: "Pedro visita tu casa y te da una valuación respaldada por datos del mercado. Sin obligación." } },
+      { title: { en: "Prepare & Stage", es: "Preparar y Presentar" }, desc: { en: "Targeted recommendations on what to fix or improve to maximize your sale price — not a generic checklist.", es: "Recomendaciones específicas sobre qué reparar o mejorar para maximizar tu precio de venta — no una lista genérica." } },
+      { title: { en: "List & Market", es: "Publicar y Promocionar" }, desc: { en: "Professional photography, compelling descriptions, and targeted marketing across the Valley to get maximum exposure.", es: "Fotografía profesional, descripciones atractivas y marketing dirigido en todo el Valle para máxima exposición." } },
+      { title: { en: "Negotiate & Close", es: "Negociar y Cerrar" }, desc: { en: "Pedro manages offers, counteroffers, inspections, and closing logistics. You focus on what's next.", es: "Pedro maneja ofertas, contraofertas, inspecciones y logística de cierre. Tú te enfocas en lo que sigue." } },
     ],
   },
   faq: [
     {
-      q: { en: "How much is my home worth in Salem's current market?", es: "¿Cuánto vale mi casa en el mercado actual de Salem?" },
-      a: { en: "Values depend on location, condition, and market conditions. Pedro provides a free comparative market analysis using recent local sales data.", es: "Los valores dependen de ubicación, condición y condiciones del mercado. Pedro proporciona un análisis comparativo de mercado gratuito usando datos de ventas locales recientes." },
-    },
-    {
-      q: { en: "Does bilingual marketing help sell faster?", es: "¿El marketing bilingüe ayuda a vender más rápido?" },
-      a: { en: "Yes. Salem has a large Spanish-speaking population. Bilingual listings expand your buyer pool, which can increase competition and potentially drive a higher price.", es: "Sí. Salem tiene una gran población hispanohablante. Listados bilingües amplían tu grupo de compradores, lo cual puede aumentar la competencia y potencialmente impulsar un precio más alto." },
+      q: { en: "How much is my home worth in today's Salem market?", es: "¿Cuánto vale mi casa en el mercado actual de Salem?" },
+      a: { en: "It depends on location, condition, size, and current demand. Pedro provides a free comparative market analysis using recent local sales data — no guesswork.", es: "Depende de la ubicación, condición, tamaño y demanda actual. Pedro hace un análisis comparativo de mercado gratis usando datos de ventas locales recientes — sin adivinanzas." },
     },
     {
       q: { en: "How long does it take to sell a home in Salem?", es: "¿Cuánto tiempo toma vender una casa en Salem?" },
-      a: { en: "Well-priced homes in Salem typically receive offers within 2-4 weeks. The full process averages 60-90 days from listing to closing.", es: "Casas bien valoradas en Salem típicamente reciben ofertas dentro de 2-4 semanas. El proceso completo promedia 60-90 días de publicación a cierre." },
+      a: { en: "Well-priced homes in Salem typically get offers within 2-4 weeks. The full process from listing to closing averages 60-90 days.", es: "Casas bien valoradas en Salem típicamente reciben ofertas dentro de 2-4 semanas. El proceso completo de publicación a cierre promedia 60-90 días." },
+    },
+    {
+      q: { en: "What do I need to do before listing?", es: "¿Qué necesito hacer antes de publicar?" },
+      a: { en: "Pedro will walk through your property and give you prioritized recommendations. Sometimes it's minor fixes. Sometimes the home is ready as-is. He'll be straight with you about what actually moves the needle.", es: "Pedro recorre tu propiedad y te da recomendaciones priorizadas. A veces son reparaciones menores. A veces la casa está lista así como está. Te dice la verdad sobre lo que realmente hace la diferencia." },
     },
   ],
 };
+
+// ─── ABOUT PAGE ───────────────────────────────────
 
 export const ABOUT_PAGE = {
   hero: {
@@ -387,29 +395,31 @@ export const ABOUT_PAGE = {
     headline_accent: { en: "Mi Casa Dream", es: "Mi Casa Dream" },
     sub: {
       en: "Oregon Licensed Real Estate Broker #201209935 — Premiere Property Group",
-      es: "Corredor de Bienes Raíces Licenciado en Oregon #201209935 — Premiere Property Group",
+      es: "Corredor de Bienes Raíces con Licencia en Oregon #201209935 — Premiere Property Group",
     },
   },
   story: {
     headline: { en: "Why Pedro Does This", es: "Por Qué Pedro Hace Esto" },
     body: {
-      en: "Pedro Giron became a real estate broker because he saw a gap in the Salem market — families who needed an agent who could truly communicate with them, not just hand them paperwork and hope for the best.\n\nGrowing up bilingual gave Pedro more than language skills. It gave him the ability to listen deeply, bridge cultural gaps, and build the kind of trust that makes people feel safe with one of the biggest financial decisions of their lives.\n\nHe named his brand \"Mi Casa Dream\" because it captures exactly what he does — he takes the \"mi casa\" (home, family, roots) and connects it to the \"dream\" (aspiration, future, possibility). That bridge between languages is the same bridge he builds between his clients and the homes they deserve.\n\nToday, Pedro serves buyers and sellers across Salem, Keizer, and the greater Willamette Valley. Whether you speak English, Spanish, or both — Pedro's door is open.",
-      es: "Pedro Giron se convirtió en corredor de bienes raíces porque vio una brecha en el mercado de Salem — familias que necesitaban un agente que pudiera comunicarse verdaderamente con ellos, no solo entregarles papeleo y esperar lo mejor.\n\nCrecer bilingüe le dio a Pedro más que habilidades de idioma. Le dio la capacidad de escuchar profundamente, conectar culturas y construir el tipo de confianza que hace que las personas se sientan seguras con una de las decisiones financieras más grandes de sus vidas.\n\nLlamó a su marca \"Mi Casa Dream\" porque captura exactamente lo que hace — toma el \"mi casa\" (hogar, familia, raíces) y lo conecta con el \"dream\" (aspiración, futuro, posibilidad). Ese puente entre idiomas es el mismo puente que construye entre sus clientes y los hogares que merecen.\n\nHoy, Pedro sirve a compradores y vendedores en Salem, Keizer y el Valle de Willamette. Ya sea que hables inglés, español o ambos — la puerta de Pedro está abierta.",
+      en: "Pedro Giron got into real estate because he kept hearing the same story from families around Salem — they felt lost in the process, overwhelmed by paperwork, and unsure if their agent was actually looking out for them.\n\nHe started Mi Casa Dream to fix that. The name says what it is — helping people turn the dream of owning a home into reality. Not with fancy marketing or empty promises, but by showing up, answering the phone, explaining what's actually going on, and fighting like hell when it's time to negotiate.\n\nPedro's clients don't just close deals. They close deals feeling like they understood every step. That's the difference.\n\nToday he serves buyers and sellers across Salem, Keizer, and the greater Willamette Valley — from starter homes to $1.5M+ acreage properties. Same approach every time: your pace, your priorities, zero pressure.",
+      es: "Pedro Giron entró al mundo de bienes raíces porque seguía escuchando la misma historia de familias en Salem — se sentían perdidas en el proceso, abrumadas por el papeleo y sin saber si su agente realmente estaba viendo por ellos.\n\nCreó Mi Casa Dream para cambiar eso. El nombre dice lo que es — ayudar a la gente a convertir el sueño de tener casa propia en realidad. No con marketing bonito ni promesas vacías, sino estando presente, contestando el teléfono, explicando lo que realmente está pasando y peleando con todo cuando llega la hora de negociar.\n\nLos clientes de Pedro no solo cierran tratos. Cierran tratos sintiéndose seguros de que entendieron cada paso. Esa es la diferencia.\n\nHoy sirve a compradores y vendedores en Salem, Keizer y el Valle de Willamette — desde casas para empezar hasta propiedades de más de $1.5M. El mismo enfoque siempre: tu ritmo, tus prioridades, cero presión.",
     },
   },
 };
 
+// ─── CONTACT PAGE ─────────────────────────────────
+
 export const CONTACT_PAGE = {
   hero: {
-    headline: { en: "LET'S TALK ABOUT", es: "HABLEMOS SOBRE" },
-    headline_accent: { en: "your next chapter", es: "tu próximo capítulo" },
+    headline: { en: "LET'S TALK ABOUT", es: "HABLEMOS DE" },
+    headline_accent: { en: "what you're looking for", es: "lo que estás buscando" },
     sub: {
-      en: "In English or Spanish — whichever feels like home.",
-      es: "En inglés o español — el que se sienta como tu hogar.",
+      en: "Whether you're ready to move or just starting to think about it — Pedro's here to answer your questions. No pressure. No pitch.",
+      es: "Ya sea que estés listo para dar el paso o apenas empezando a pensarlo — Pedro está aquí para responder tus preguntas. Sin presión. Sin discurso de ventas.",
     },
   },
   form: {
-    headline: { en: "Schedule a Free Consultation", es: "Agendar Consulta Gratuita" },
+    headline: { en: "Book a Free Call", es: "Agenda Tu Llamada Gratis" },
     fields: {
       first_name: { en: "First Name", es: "Nombre" },
       last_name: { en: "Last Name", es: "Apellido" },
@@ -417,30 +427,32 @@ export const CONTACT_PAGE = {
       phone: { en: "Phone", es: "Teléfono" },
       language: { en: "Preferred Language", es: "Idioma Preferido" },
       interest: { en: "I'm Interested In", es: "Me Interesa" },
-      message: { en: "Message (optional)", es: "Mensaje (opcional)" },
+      message: { en: "Tell me about your situation (optional)", es: "Cuéntame sobre tu situación (opcional)" },
     },
     interest_options: {
       en: ["Buying a Home", "Selling a Home", "Both", "Land / Acreage", "Just Have Questions"],
       es: ["Comprar Casa", "Vender Casa", "Ambos", "Terreno / Acres", "Solo Tengo Preguntas"],
     },
-    submit: { en: "Book My Free Call", es: "Agendar Mi Llamada Gratis" },
+    submit: { en: "Book My Free Call", es: "Agenda Mi Llamada" },
     privacy: {
-      en: "Your information is private and never shared. Pedro responds within 24 hours.",
-      es: "Tu información es privada y nunca se comparte. Pedro responde dentro de 24 horas.",
+      en: "Your information stays private. Pedro responds within 24 hours.",
+      es: "Tu información es privada. Pedro responde dentro de 24 horas.",
     },
   },
 };
 
+// ─── SHARED ───────────────────────────────────────
+
 export const CTA_BAND = {
   headline: { en: "Ready to make", es: "¿Listo para dar" },
   headline_accent: { en: "your move?", es: "el paso?" },
-  cta: { en: "Book a Free Call", es: "Agendar Llamada Gratis" },
+  cta: { en: "Book a Free Call", es: "Agenda Tu Llamada" },
 };
 
 export const FOOTER = {
   tagline: {
-    en: "\"Mi Casa\" is home. \"Dream\" is where you're going.",
-    es: "\"Mi Casa\" es hogar. \"Dream\" es a dónde vas.",
+    en: "Helping families find home across the Willamette Valley.",
+    es: "Ayudando familias a encontrar su hogar en el Valle de Willamette.",
   },
   sections: {
     services: { en: "Services", es: "Servicios" },
