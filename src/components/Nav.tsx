@@ -49,8 +49,8 @@ export default function Nav() {
             <span>{SITE.google.count}</span>
           </div>
 
-          {/* Language toggle — prominent */}
-          <LangToggle size="md" variant="dark" />
+          {/* Language toggle */}
+          <LangToggle size="nav" />
 
           {/* CTA — desktop */}
           <Link
@@ -90,7 +90,7 @@ export default function Nav() {
 
           {/* Mobile: Toggle gets its own row, centered, bigger */}
           <div className="flex justify-center mt-6 mb-4">
-            <LangToggle size="lg" variant="dark" />
+            <LangToggle size="hero" />
           </div>
 
           <div className="flex flex-col gap-3">

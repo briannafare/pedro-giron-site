@@ -6,6 +6,7 @@ import { useLang } from "@/lib/i18n";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import LangToggle from "@/components/LangToggle";
 import {
   HERO, STATS, SERVICES, WHY_PEDRO, DREAM_SECTION,
   TESTIMONIALS, FAQ_HOME, CTA_BAND, SITE,
@@ -26,19 +27,21 @@ function HeroSection() {
   const { t } = useLang();
   return (
     <section className="relative bg-midnight min-h-[90vh] flex items-center overflow-hidden">
-      {/* Ambient glow */}
+      {/* Ambient glows — using all accent colors */}
       <div className="absolute top-[-120px] right-[-80px] w-[400px] h-[400px] bg-fuego/[0.08] rounded-full blur-[120px]" />
-      <div className="absolute bottom-[-80px] left-[10%] w-[300px] h-[300px] bg-oro/[0.05] rounded-full blur-[100px]" />
-      <div className="absolute top-[30%] left-[-60px] w-[200px] h-[200px] bg-calma/[0.04] rounded-full blur-[80px]" />
+      <div className="absolute bottom-[-80px] left-[10%] w-[300px] h-[300px] bg-oro/[0.08] rounded-full blur-[100px]" />
+      <div className="absolute top-[40%] left-[-60px] w-[250px] h-[250px] bg-calma/[0.06] rounded-full blur-[90px]" />
 
       <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-32 pb-20 md:pt-36 md:pb-24 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
           {/* Copy */}
           <div className="lg:col-span-7">
-            <div
-              className="inline-block text-[10px] font-semibold tracking-[0.1em] uppercase text-oro border border-oro/30 rounded-full px-4 py-1.5 mb-6"
-              style={{ animationDelay: "0s" }}
-            >
+            {/* Language toggle — featured, hero-sized, above the headline */}
+            <div className="mb-6">
+              <LangToggle size="hero" />
+            </div>
+
+            <div className="inline-block text-[10px] font-semibold tracking-[0.12em] uppercase text-oro border border-oro/30 rounded-full px-4 py-1.5 mb-5">
               {t(HERO.overline.en, HERO.overline.es)}
             </div>
             <h1 className="mb-2">
@@ -85,9 +88,9 @@ function HeroSection() {
                   priority
                 />
               </div>
-              {/* Decorative accent behind photo */}
-              <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border border-fuego/20 z-0" />
-              <div className="absolute -top-3 -left-3 w-16 h-16 bg-oro/10 rounded-xl z-0" />
+              {/* Accent borders using oro */}
+              <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border border-oro/20 z-0" />
+              <div className="absolute -top-4 -left-4 w-20 h-20 bg-oro/10 rounded-xl z-0" />
             </div>
           </div>
         </div>
@@ -100,18 +103,18 @@ function HeroSection() {
 function TrustStrip() {
   const { t } = useLang();
   return (
-    <section className="bg-midnight border-t border-white/5">
+    <section className="bg-midnight border-t border-oro/10">
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {STATS.map((stat, i) => {
             const Icon = ICON_MAP[stat.icon];
             return (
               <ScrollReveal key={i} delay={i * 0.1} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white/[0.04] flex items-center justify-center text-oro">
+                <div className="w-10 h-10 rounded-lg bg-oro/[0.08] flex items-center justify-center text-oro">
                   <Icon size={18} />
                 </div>
                 <div>
-                  <div className="text-white font-extrabold text-[22px] tracking-tight leading-none">
+                  <div className="text-oro font-extrabold text-[22px] tracking-tight leading-none">
                     {stat.value}
                   </div>
                   <div className="text-white/30 text-[11px] mt-0.5">
@@ -153,7 +156,7 @@ function ServicesSection() {
             const Icon = ICON_MAP[svc.icon];
             return (
               <ScrollReveal key={i} delay={i * 0.12}>
-                <div className="bg-white rounded-2xl p-7 border border-midnight/[0.04] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <div className="bg-white rounded-2xl p-7 border border-midnight/[0.04] hover:border-calma/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
                   <div className="w-11 h-11 rounded-xl bg-fuego/[0.08] flex items-center justify-center text-fuego mb-5">
                     <Icon size={20} />
                   </div>
@@ -184,11 +187,11 @@ function ServicesSection() {
 function WhyPedroSection() {
   const { t } = useLang();
   return (
-    <section className="bg-white py-20 md:py-28 border-t border-midnight/[0.04]">
+    <section className="bg-white py-20 md:py-28 border-t border-haze">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <ScrollReveal>
-            <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-fuego mb-3">
+            <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-oro mb-3">
               {t(WHY_PEDRO.overline.en, WHY_PEDRO.overline.es)}
             </div>
             <h2 className="font-display text-[clamp(28px,4vw,44px)] font-extrabold text-midnight leading-tight tracking-tight mb-2">
@@ -215,8 +218,8 @@ function WhyPedroSection() {
               const Icon = ICON_MAP[p.icon];
               return (
                 <ScrollReveal key={i} delay={i * 0.12}>
-                  <div className="flex gap-4 p-5 rounded-xl bg-paper/80 border border-midnight/[0.03] hover:border-calma/20 transition-colors">
-                    <div className="w-10 h-10 rounded-lg bg-calma/[0.08] flex items-center justify-center text-calma shrink-0">
+                  <div className="flex gap-4 p-5 rounded-xl bg-paper/80 border border-haze hover:border-calma/30 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-calma/[0.1] flex items-center justify-center text-calma shrink-0">
                       <Icon size={18} />
                     </div>
                     <div>
@@ -244,7 +247,8 @@ function DreamSection() {
   return (
     <section className="relative bg-midnight py-20 md:py-28 overflow-hidden">
       <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-fuego/[0.06] rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 left-[20%] w-[250px] h-[250px] bg-calma/[0.04] rounded-full blur-[80px]" />
+      <div className="absolute bottom-[-40px] left-[20%] w-[300px] h-[300px] bg-oro/[0.06] rounded-full blur-[100px]" />
+      <div className="absolute top-[40%] right-[30%] w-[200px] h-[200px] bg-calma/[0.04] rounded-full blur-[80px]" />
 
       <div className="relative max-w-7xl mx-auto px-5 md:px-8">
         <ScrollReveal>
@@ -252,7 +256,7 @@ function DreamSection() {
             <div className="font-display text-[22px] md:text-[28px] font-extrabold text-white tracking-tight mb-2">
               MI CASA <span className="text-fuego">DREAM</span>
             </div>
-            <div className="w-12 h-[2px] bg-oro/40 mx-auto my-5" />
+            <div className="w-16 h-[2px] bg-gradient-to-r from-oro/60 via-fuego/40 to-calma/30 mx-auto my-5" />
             <h2 className="font-accent italic text-[clamp(26px,4vw,42px)] text-white/90 leading-tight">
               {t(DREAM_SECTION.headline.en, DREAM_SECTION.headline.es)}
             </h2>
@@ -281,7 +285,7 @@ function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <ScrollReveal>
           <div className="text-center mb-14">
-            <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-fuego mb-3">
+            <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-oro mb-3">
               {t("Reviews", "Reseñas")}
             </div>
             <h2 className="font-display text-[clamp(28px,4vw,44px)] font-extrabold text-midnight leading-tight tracking-tight">
@@ -297,21 +301,21 @@ function TestimonialsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {TESTIMONIALS.map((review, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
-              <div className="bg-white rounded-2xl p-6 border border-midnight/[0.04] h-full flex flex-col">
+              <div className="bg-white rounded-2xl p-6 border border-haze hover:border-oro/20 transition-colors h-full flex flex-col">
                 <div className="text-oro text-[13px] mb-3">★★★★★</div>
                 <p className="font-accent italic text-midnight text-[15px] leading-relaxed flex-1">
                   &ldquo;{review.text}&rdquo;
                 </p>
-                <div className="mt-4 pt-4 border-t border-midnight/[0.04] flex justify-between items-center">
+                <div className="mt-4 pt-4 border-t border-haze flex justify-between items-center">
                   <div>
                     <div className="font-display text-[13px] font-bold text-midnight">
                       {review.name}
                     </div>
-                    <div className="text-stone text-[11px]">
+                    <div className="text-calma text-[11px] font-medium">
                       {t(review.context.en, review.context.es)}
                     </div>
                   </div>
-                  <div className="text-[10px] text-stone/50">{review.date}</div>
+                  <div className="text-[10px] text-stone/40">{review.date}</div>
                 </div>
               </div>
             </ScrollReveal>
@@ -338,7 +342,7 @@ function FAQSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section className="bg-white py-20 md:py-28 border-t border-midnight/[0.04]">
+    <section className="bg-white py-20 md:py-28 border-t border-haze">
       <div className="max-w-3xl mx-auto px-5 md:px-8">
         <ScrollReveal>
           <div className="text-center mb-12">
@@ -354,7 +358,7 @@ function FAQSection() {
         <div className="space-y-2">
           {FAQ_HOME.map((faq, i) => (
             <ScrollReveal key={i} delay={i * 0.05}>
-              <div className="border border-midnight/[0.05] rounded-xl overflow-hidden">
+              <div className="border border-haze rounded-xl overflow-hidden">
                 <button
                   onClick={() => setOpenIdx(openIdx === i ? null : i)}
                   className="w-full flex items-center justify-between p-5 text-left hover:bg-paper/50 transition-colors"
@@ -364,13 +368,13 @@ function FAQSection() {
                   </span>
                   <ChevronDown
                     size={16}
-                    className={`text-stone shrink-0 transition-transform ${
+                    className={`text-calma shrink-0 transition-transform duration-300 ${
                       openIdx === i ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {openIdx === i && (
-                  <div className="px-5 pb-5 text-stone text-[14px] leading-relaxed border-t border-midnight/[0.03]">
+                  <div className="px-5 pb-5 text-stone text-[14px] leading-relaxed border-t border-haze">
                     <div className="pt-4">{t(faq.a.en, faq.a.es)}</div>
                   </div>
                 )}
@@ -389,6 +393,7 @@ function CTABand() {
   return (
     <section className="relative bg-midnight py-16 md:py-20 overflow-hidden">
       <div className="absolute top-[-40px] right-[-30px] w-[180px] h-[180px] bg-fuego/[0.08] rounded-full blur-[80px]" />
+      <div className="absolute bottom-[-30px] left-[20%] w-[160px] h-[160px] bg-oro/[0.06] rounded-full blur-[60px]" />
       <div className="relative max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <h2 className="font-display text-[clamp(24px,3.5vw,36px)] font-extrabold text-white tracking-tight text-center md:text-left">
           {t(CTA_BAND.headline.en, CTA_BAND.headline.es)}{" "}

@@ -4,59 +4,88 @@ import { useLang } from "@/lib/i18n";
 import { useEffect, useState } from "react";
 
 interface Props {
-  size?: "sm" | "md" | "lg";
-  variant?: "dark" | "light";
+  size?: "nav" | "hero";
 }
 
-export default function LangToggle({ size = "md", variant = "dark" }: Props) {
+export default function LangToggle({ size = "nav" }: Props) {
   const { lang, toggle } = useLang();
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [pulse, setPulse] = useState(false);
 
-  // Subtle entrance pulse on first render to draw attention
   useEffect(() => {
-    const timer = setTimeout(() => setHasAnimated(true), 1500);
-    return () => clearTimeout(timer);
+    setMounted(true);
+    const t = setTimeout(() => setPulse(true), 800);
+    const t2 = setTimeout(() => setPulse(false), 2400);
+    return () => { clearTimeout(t); clearTimeout(t2); };
   }, []);
 
-  const sizes = {
-    sm: { text: "text-[10px]", px: "px-3", py: "py-1.5", gap: "gap-0" },
-    md: { text: "text-[12px]", px: "px-4", py: "py-2", gap: "gap-0" },
-    lg: { text: "text-[14px]", px: "px-5", py: "py-2.5", gap: "gap-0" },
-  };
+  if (size === "hero") {
+    return (
+      <button
+        onClick={toggle}
+        aria-label={lang === "en" ? "Cambiar a español" : "Switch to English"}
+        className={`
+          group relative inline-flex items-center rounded-full
+          border-2 border-oro/30 hover:border-oro/60
+          transition-all duration-500 overflow-hidden
+          ${pulse ? "ring-2 ring-oro/20 ring-offset-2 ring-offset-midnight" : ""}
+        `}
+      >
+        <span
+          className={`
+            relative z-10 text-[14px] font-bold tracking-wide px-5 py-2.5
+            transition-all duration-300
+            ${lang === "en"
+              ? "text-midnight bg-oro"
+              : "text-white/40 group-hover:text-white/60"
+            }
+          `}
+        >
+          EN
+        </span>
+        <span
+          className={`
+            relative z-10 text-[14px] font-bold tracking-wide px-5 py-2.5
+            transition-all duration-300
+            ${lang === "es"
+              ? "text-midnight bg-oro"
+              : "text-white/40 group-hover:text-white/60"
+            }
+          `}
+        >
+          ES
+        </span>
+      </button>
+    );
+  }
 
-  const s = sizes[size];
-
-  const isDark = variant === "dark";
-  const activeBg = "bg-fuego";
-  const activeText = "text-white";
-  const inactiveBg = isDark ? "bg-white/[0.04]" : "bg-midnight/[0.04]";
-  const inactiveText = isDark ? "text-white/30" : "text-midnight/30";
-  const borderColor = isDark ? "border-white/[0.08]" : "border-midnight/[0.08]";
-
+  // Nav size — smaller, still visible
   return (
     <button
       onClick={toggle}
-      className={`
-        relative inline-flex items-center ${s.gap} rounded-full border ${borderColor}
-        overflow-hidden transition-all duration-300
-        ${!hasAnimated ? "animate-pulse" : ""}
-      `}
-      aria-label={lang === "en" ? "Switch to Spanish" : "Cambiar a inglés"}
+      aria-label={lang === "en" ? "Cambiar a español" : "Switch to English"}
+      className="group relative inline-flex items-center rounded-full border border-oro/25 hover:border-oro/50 transition-all duration-300 overflow-hidden"
     >
       <span
         className={`
-          ${s.text} font-semibold tracking-wide ${s.px} ${s.py}
-          transition-all duration-300 relative z-10
-          ${lang === "en" ? `${activeBg} ${activeText}` : `${inactiveBg} ${inactiveText} hover:${isDark ? "text-white/50" : "text-midnight/50"}`}
+          text-[11px] font-bold tracking-wide px-3.5 py-1.5
+          transition-all duration-300
+          ${lang === "en"
+            ? "text-midnight bg-oro"
+            : "text-white/30 group-hover:text-white/50"
+          }
         `}
       >
         EN
       </span>
       <span
         className={`
-          ${s.text} font-semibold tracking-wide ${s.px} ${s.py}
-          transition-all duration-300 relative z-10
-          ${lang === "es" ? `${activeBg} ${activeText}` : `${inactiveBg} ${inactiveText} hover:${isDark ? "text-white/50" : "text-midnight/50"}`}
+          text-[11px] font-bold tracking-wide px-3.5 py-1.5
+          transition-all duration-300
+          ${lang === "es"
+            ? "text-midnight bg-oro"
+            : "text-white/30 group-hover:text-white/50"
+          }
         `}
       >
         ES
