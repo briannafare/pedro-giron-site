@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="font-display text-[18px] font-extrabold text-white tracking-tight mb-3">
               MI CASA <span className="text-fuego">DREAM</span>
             </div>
-            <p className="text-[13px] leading-relaxed max-w-xs mb-6 text-white/45">
+            <p className="text-[13px] leading-relaxed max-w-xs mb-6 text-white/65">
               {t(FOOTER.tagline.en, FOOTER.tagline.es)}
             </p>
             <div className="space-y-2.5 text-[13px]">

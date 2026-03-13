@@ -56,7 +56,7 @@ export default function InnerHero({ overline, headline, headline_accent, sub, il
               {t(headline_accent.en, headline_accent.es)}
             </span>
           </h1>
-          <p className="text-white/55 text-[15px] leading-relaxed max-w-lg mt-5">
+          <p className="text-white/70 text-[15px] leading-relaxed max-w-lg mt-5">
             {t(sub.en, sub.es)}
           </p>
         </div>

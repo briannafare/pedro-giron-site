@@ -59,7 +59,7 @@ export default function AboutPage() {
                   <div className="absolute -top-3 -left-3 w-16 h-16 bg-oro/8 rounded-xl z-0" />
                   <div className="absolute bottom-3 left-3 bg-midnight/90 backdrop-blur-sm rounded-lg px-4 py-2.5 z-20 border border-oro/15">
                     <div className="font-display text-[13px] font-extrabold text-white">MI CASA <span className="text-fuego">DREAM</span></div>
-                    <div className="text-white/45 text-[10px] mt-0.5">{SITE.agent} · {t("Broker", "Corredor")}</div>
+                    <div className="text-white/55 text-[10px] mt-0.5">{SITE.agent} · {t("Broker", "Corredor")}</div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -79,7 +79,7 @@ export default function AboutPage() {
               {t("Professional negotiator by day.", "Negociador profesional de día.")}
               <br /><span className="font-accent italic text-fuego">{t("Cumbia dancer by night.", "Bailarín de cumbia de noche.")}</span>
             </h2>
-            <p className="text-white/55 text-[14px] leading-relaxed max-w-lg mx-auto">
+            <p className="text-white/70 text-[14px] leading-relaxed max-w-lg mx-auto">
               {t("Pedro brings the same energy to your deal as he does to the dance floor — calm confidence, perfect timing, and moves nobody sees coming.", "Pedro trae la misma energía a tu negocio que a la pista de baile — confianza tranquila, tiempo perfecto, y movimientos que nadie espera.")}
             </p>
           </ScrollReveal>
@@ -158,7 +158,7 @@ function TrackRecord() {
             <ScrollReveal key={i} delay={i * 0.08}>
               <div className="text-center">
                 <div className={`${item.color} font-display font-extrabold text-[15px] md:text-[18px] tracking-tight`}>{item.value}</div>
-                <div className="text-white/40 text-[10px] md:text-[11px] mt-1">{t(item.label.en, item.label.es)}</div>
+                <div className="text-white/55 text-[10px] md:text-[11px] mt-1">{t(item.label.en, item.label.es)}</div>
               </div>
             </ScrollReveal>
           ))}
