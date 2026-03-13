@@ -17,7 +17,7 @@ export default function ContactPage() {
     <>
       <Nav />
       <InnerHero
-        overline={CONTACT_PAGE.hero.overline || { en: "Contact", es: "Contacto" }}
+        overline={{ en: "Contact", es: "Contacto" }}
         headline={CONTACT_PAGE.hero.headline}
         headline_accent={CONTACT_PAGE.hero.headline_accent}
         sub={CONTACT_PAGE.hero.sub}
