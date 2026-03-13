@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import LangToggle from "@/components/LangToggle";
 import Marquee from "@/components/Marquee";
-import { ValleyScene, CommunityScene, DanceAbstract, DoorwayScene, GrowthScene, HeadshotFrame, DotsGrid, useCounter, MARKET_DATA } from "@/components/Illustrations";
+import { ValleyScene, CommunityScene, DanceAbstract, BuyingJourney, SellingValue, HeadshotFrame, useCounter, MARKET_DATA } from "@/components/Illustrations";
 import { HERO, STATS, SERVICES, WHY_PEDRO, DREAM_SECTION, TESTIMONIALS, FAQ_HOME, CTA_BAND, SITE } from "@/lib/data";
 import { Star, MessageCircle, Globe, ThumbsUp, Home, TrendingUp, Mountain, Shield, Clock, Phone, ChevronDown, ArrowRight, BarChart3 } from "lucide-react";
 import { useState } from "react";
@@ -72,8 +72,11 @@ function StatsTicker() {
 
 function ServicesSection() {
   const { t } = useLang();
-  const illustrations = [<DoorwayScene key="d" className="w-full h-full" />, <GrowthScene key="g" className="w-full h-full" />, <ValleyScene key="v" className="w-full h-full" variant="light" />];
-  const colors = ["fuego", "oro", "calma"] as const;
+  const svcData = [
+    { illust: <BuyingJourney className="w-full h-full" />, border: "border-fuego/10", bg: "bg-fuego/[0.02]", overline: "text-fuego", line: "bg-fuego/40", cta: "text-fuego" },
+    { illust: <SellingValue className="w-full h-full" />, border: "border-oro/10", bg: "bg-oro/[0.02]", overline: "text-oro", line: "bg-oro/40", cta: "text-oro" },
+    { illust: <ValleyScene className="w-full h-full" variant="light" />, border: "border-calma/10", bg: "bg-calma/[0.02]", overline: "text-calma", line: "bg-calma/40", cta: "text-calma" },
+  ];
   return (
     <section className="bg-paper py-20 md:py-28 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
@@ -86,22 +89,23 @@ function ServicesSection() {
         <div className="space-y-20 md:space-y-28">
           {SERVICES.map((svc, i) => {
             const isEven = i % 2 === 0;
-            const c = colors[i];
-            const borderClass = i === 0 ? "border-fuego/10 bg-fuego/[0.02]" : i === 1 ? "border-oro/10 bg-oro/[0.02]" : "border-calma/10 bg-calma/[0.02]";
+            const s = svcData[i];
             return (
               <ScrollReveal key={i}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center">
                   <div className={isEven ? "md:order-1" : "md:order-2"}>
-                    <div className={`relative aspect-[4/3] rounded-2xl overflow-hidden border ${borderClass}`}>
-                      <div className="absolute inset-0 p-6">{illustrations[i]}</div>
-                      <div className="absolute bottom-4 left-5 font-display text-[64px] md:text-[80px] font-extrabold leading-none text-midnight/[0.04] select-none">0{i+1}</div>
+                    <div className={`relative aspect-[4/3] rounded-2xl overflow-hidden border ${s.border} ${s.bg}`}>
+                      <div className="absolute inset-0 p-4 md:p-6">{s.illust}</div>
+                      <div className="absolute bottom-3 left-4 font-display text-[56px] md:text-[72px] font-extrabold leading-none text-midnight/[0.04] select-none">0{i + 1}</div>
                     </div>
                   </div>
                   <div className={isEven ? "md:order-2" : "md:order-1"}>
-                    <div className={`inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.12em] uppercase text-${c} mb-3`}><div className={`w-5 h-[1px] bg-${c}/40`} />{t("Service","Servicio")} 0{i+1}</div>
-                    <h3 className="font-display text-[clamp(30px,4.5vw,44px)] font-extrabold text-midnight tracking-tight leading-tight mb-4">{t(svc.title.en, svc.title.es)}</h3>
-                    <p className="text-stone text-[16px] leading-relaxed max-w-md mb-6">{t(svc.desc.en, svc.desc.es)}</p>
-                    <Link href={svc.href} className={`inline-flex items-center gap-2 text-[15px] font-semibold text-${c} hover:gap-3 transition-all`}>{t(svc.cta.en, svc.cta.es)}<ArrowRight size={16} /></Link>
+                    <div className={`inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.12em] uppercase ${s.overline} mb-3`}>
+                      <div className={`w-5 h-[1px] ${s.line}`} />{t("Service", "Servicio")} 0{i + 1}
+                    </div>
+                    <h3 className="font-display text-[clamp(28px,4vw,42px)] font-extrabold text-midnight tracking-tight leading-tight mb-4">{t(svc.title.en, svc.title.es)}</h3>
+                    <p className="text-stone text-[15px] leading-relaxed max-w-md mb-6">{t(svc.desc.en, svc.desc.es)}</p>
+                    <Link href={svc.href} className={`inline-flex items-center gap-2 text-[15px] font-semibold ${s.cta} hover:gap-3 transition-all`}>{t(svc.cta.en, svc.cta.es)}<ArrowRight size={16} /></Link>
                   </div>
                 </div>
               </ScrollReveal>

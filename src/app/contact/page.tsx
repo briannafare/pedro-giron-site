@@ -4,9 +4,11 @@ import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import InnerHero from "@/components/InnerHero";
 import ScrollReveal from "@/components/ScrollReveal";
+import { ConnectionBridge, ValleyScene } from "@/components/Illustrations";
 import { CONTACT_PAGE, SITE, STATS } from "@/lib/data";
-import { Phone, Mail, MapPin, Instagram, Facebook, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, ArrowRight, Clock, Star, MessageCircle } from "lucide-react";
 
 export default function ContactPage() {
   const { lang, t } = useLang();
@@ -14,244 +16,123 @@ export default function ContactPage() {
   return (
     <>
       <Nav />
+      <InnerHero
+        overline={CONTACT_PAGE.hero.overline || { en: "Contact", es: "Contacto" }}
+        headline={CONTACT_PAGE.hero.headline}
+        headline_accent={CONTACT_PAGE.hero.headline_accent}
+        sub={CONTACT_PAGE.hero.sub}
+        illustration={<ConnectionBridge className="w-full h-full" />}
+        accentColor="calma"
+      />
 
-      {/* Hero */}
-      <section className="bg-midnight pt-32 pb-12 md:pt-40 md:pb-16 relative overflow-hidden">
-        <div className="absolute top-[-80px] right-[-50px] w-[300px] h-[300px] bg-fuego/[0.06] rounded-full blur-[100px]" />
-        <div className="absolute bottom-[-60px] left-[10%] w-[200px] h-[200px] bg-calma/[0.04] rounded-full blur-[80px]" />
-        <div className="relative max-w-7xl mx-auto px-5 md:px-8">
-          <div className="max-w-2xl">
-            <h1 className="mb-2">
-              <span className="block font-display text-[clamp(34px,5.5vw,60px)] font-extrabold text-white leading-[0.95] tracking-tighter">
-                {t(CONTACT_PAGE.hero.headline.en, CONTACT_PAGE.hero.headline.es)}
-              </span>
-              <span className="block font-accent text-[clamp(32px,5vw,56px)] italic text-fuego leading-[1.1]">
-                {t(CONTACT_PAGE.hero.headline_accent.en, CONTACT_PAGE.hero.headline_accent.es)}
-              </span>
-            </h1>
-            <p className="text-white/40 text-[15px] max-w-md mt-5">
-              {t(CONTACT_PAGE.hero.sub.en, CONTACT_PAGE.hero.sub.es)}
-            </p>
+      {/* Quick contact options — visual cards */}
+      <section className="bg-paper py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-5 md:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="font-display text-[clamp(28px,4vw,42px)] font-extrabold text-midnight tracking-tight">
+                {t("Choose how to connect", "Elige cómo conectarte")}
+              </h2>
+              <p className="text-stone text-[14px] mt-2">{t("Pedro responds to every message. Usually within hours.", "Pedro responde cada mensaje. Normalmente en horas.")}</p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+            {/* Call */}
+            <ScrollReveal delay={0}>
+              <a href={`tel:${SITE.phone.replace(/[^0-9]/g, "")}`} className="block bg-white rounded-2xl p-6 border border-fuego/10 hover:border-fuego/25 transition-all hover:shadow-sm group">
+                <div className="w-11 h-11 rounded-xl bg-fuego/[0.08] flex items-center justify-center text-fuego mb-4 group-hover:bg-fuego/[0.12] transition-colors">
+                  <Phone size={20} />
+                </div>
+                <h3 className="font-display text-[17px] font-extrabold text-midnight mb-1">{t("Call Pedro", "Llama a Pedro")}</h3>
+                <p className="text-fuego font-semibold text-[15px]">{SITE.phone}</p>
+                <p className="text-stone text-[12px] mt-2">{t("Best for urgent questions", "Mejor para preguntas urgentes")}</p>
+              </a>
+            </ScrollReveal>
+            {/* Email */}
+            <ScrollReveal delay={0.1}>
+              <a href={`mailto:${SITE.email}`} className="block bg-white rounded-2xl p-6 border border-oro/10 hover:border-oro/25 transition-all hover:shadow-sm group">
+                <div className="w-11 h-11 rounded-xl bg-oro/[0.08] flex items-center justify-center text-oro mb-4 group-hover:bg-oro/[0.12] transition-colors">
+                  <Mail size={20} />
+                </div>
+                <h3 className="font-display text-[17px] font-extrabold text-midnight mb-1">Email</h3>
+                <p className="text-oro font-semibold text-[14px] break-all">{SITE.email}</p>
+                <p className="text-stone text-[12px] mt-2">{t("Detailed questions & documents", "Preguntas detalladas y documentos")}</p>
+              </a>
+            </ScrollReveal>
+            {/* Instagram DM */}
+            <ScrollReveal delay={0.2}>
+              <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" className="block bg-white rounded-2xl p-6 border border-calma/10 hover:border-calma/25 transition-all hover:shadow-sm group">
+                <div className="w-11 h-11 rounded-xl bg-calma/[0.08] flex items-center justify-center text-calma mb-4 group-hover:bg-calma/[0.12] transition-colors">
+                  <Instagram size={20} />
+                </div>
+                <h3 className="font-display text-[17px] font-extrabold text-midnight mb-1">Instagram DM</h3>
+                <p className="text-calma font-semibold text-[14px]">@pedrogiron_realtor</p>
+                <p className="text-stone text-[12px] mt-2">{t("Quick casual questions", "Preguntas rápidas y casuales")}</p>
+              </a>
+            </ScrollReveal>
           </div>
+
+          {/* Office location */}
+          <ScrollReveal delay={0.15}>
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-haze">
+              <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-midnight/[0.05] flex items-center justify-center text-midnight shrink-0"><MapPin size={18} /></div>
+                  <div>
+                    <h3 className="font-display text-[15px] font-extrabold text-midnight">{t("Office", "Oficina")}</h3>
+                    <p className="text-stone text-[14px] leading-relaxed">{SITE.address}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-midnight/[0.05] flex items-center justify-center text-midnight shrink-0"><Clock size={18} /></div>
+                  <div>
+                    <h3 className="font-display text-[15px] font-extrabold text-midnight">{t("Hours", "Horario")}</h3>
+                    <p className="text-stone text-[14px]">{t("Mon–Sat 8am–7pm", "Lun–Sáb 8am–7pm")}</p>
+                    <p className="text-stone text-[12px]">{t("Evenings & Sundays by appointment", "Noches y domingos con cita")}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-oro/[0.06] flex items-center justify-center text-oro shrink-0"><Star size={18} /></div>
+                  <div>
+                    <h3 className="font-display text-[15px] font-extrabold text-midnight">{SITE.google.rating} ★</h3>
+                    <p className="text-stone text-[14px]">{SITE.google.count} {t("Google reviews", "reseñas Google")}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Social + Brokerage */}
+          <ScrollReveal delay={0.2}>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-stone text-[13px] hover:text-fuego transition-colors"><Facebook size={16} />Facebook</a>
+              <span className="text-haze">·</span>
+              <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-stone text-[13px] hover:text-fuego transition-colors"><Instagram size={16} />Instagram</a>
+              <span className="text-haze">·</span>
+              <span className="text-stone/50 text-[12px]">{SITE.brokerage} · {t("License", "Licencia")} #{SITE.license}</span>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Form + Info */}
-      <section className="bg-midnight pb-16 md:pb-24">
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-            {/* Form */}
-            <div className="lg:col-span-7">
-              <ScrollReveal>
-                <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 md:p-8">
-                  <h2 className="font-display text-[18px] font-extrabold text-white mb-6">
-                    {t(CONTACT_PAGE.form.headline.en, CONTACT_PAGE.form.headline.es)}
-                  </h2>
-
-                  <form className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-white/30 text-[11px] font-semibold uppercase tracking-wider mb-1.5">
-                          {t(CONTACT_PAGE.form.fields.first_name.en, CONTACT_PAGE.form.fields.first_name.es)}
-                        </label>
-                        <input
-                          type="text"
-                          name="first_name"
-                          required
-                          className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-[14px] placeholder-white/15 focus:border-calma/40 focus:outline-none focus:ring-1 focus:ring-calma/20 transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-white/30 text-[11px] font-semibold uppercase tracking-wider mb-1.5">
-                          {t(CONTACT_PAGE.form.fields.last_name.en, CONTACT_PAGE.form.fields.last_name.es)}
-                        </label>
-                        <input
-                          type="text"
-                          name="last_name"
-                          required
-                          className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-[14px] placeholder-white/15 focus:border-calma/40 focus:outline-none focus:ring-1 focus:ring-calma/20 transition-colors"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-white/30 text-[11px] font-semibold uppercase tracking-wider mb-1.5">
-                          {t(CONTACT_PAGE.form.fields.email.en, CONTACT_PAGE.form.fields.email.es)}
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          required
-                          className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-[14px] placeholder-white/15 focus:border-calma/40 focus:outline-none focus:ring-1 focus:ring-calma/20 transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-white/30 text-[11px] font-semibold uppercase tracking-wider mb-1.5">
-                          {t(CONTACT_PAGE.form.fields.phone.en, CONTACT_PAGE.form.fields.phone.es)}
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          required
-                          className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-[14px] placeholder-white/15 focus:border-calma/40 focus:outline-none focus:ring-1 focus:ring-calma/20 transition-colors"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-white/30 text-[11px] font-semibold uppercase tracking-wider mb-1.5">
-                          {t(CONTACT_PAGE.form.fields.language.en, CONTACT_PAGE.form.fields.language.es)}
-                        </label>
-                        <select
-                          name="preferred_language"
-                          className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-[14px] focus:border-calma/40 focus:outline-none focus:ring-1 focus:ring-calma/20 transition-colors appearance-none"
-                        >
-                          <option value="English" className="bg-midnight">English</option>
-                          <option value="Español" className="bg-midnight">Español</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-white/30 text-[11px] font-semibold uppercase tracking-wider mb-1.5">
-                          {t(CONTACT_PAGE.form.fields.interest.en, CONTACT_PAGE.form.fields.interest.es)}
-                        </label>
-                        <select
-                          name="interest"
-                          className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-[14px] focus:border-calma/40 focus:outline-none focus:ring-1 focus:ring-calma/20 transition-colors appearance-none"
-                        >
-                          {(lang === "en"
-                            ? CONTACT_PAGE.form.interest_options.en
-                            : CONTACT_PAGE.form.interest_options.es
-                          ).map((opt) => (
-                            <option key={opt} value={opt} className="bg-midnight">
-                              {opt}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-white/30 text-[11px] font-semibold uppercase tracking-wider mb-1.5">
-                        {t(CONTACT_PAGE.form.fields.message.en, CONTACT_PAGE.form.fields.message.es)}
-                      </label>
-                      <textarea
-                        name="message"
-                        rows={4}
-                        className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-[14px] placeholder-white/15 focus:border-calma/40 focus:outline-none focus:ring-1 focus:ring-calma/20 transition-colors resize-none"
-                      />
-                    </div>
-
-                    <input type="hidden" name="source" value="website-contact" />
-
-                    <button
-                      type="submit"
-                      className="w-full bg-fuego text-white text-[14px] font-semibold rounded-lg px-6 py-4 hover:bg-fuego-dark transition-colors flex items-center justify-center gap-2"
-                    >
-                      {t(CONTACT_PAGE.form.submit.en, CONTACT_PAGE.form.submit.es)}
-                      <ArrowRight size={16} />
-                    </button>
-
-                    <p className="text-white/20 text-[11px] text-center leading-relaxed">
-                      {t(CONTACT_PAGE.form.privacy.en, CONTACT_PAGE.form.privacy.es)}
-                    </p>
-                  </form>
-                </div>
-              </ScrollReveal>
+      {/* CTA */}
+      <section className="relative bg-midnight py-14 md:py-18 overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 opacity-15"><ValleyScene className="w-full" variant="dark" /></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-5 md:px-8 text-center">
+          <ScrollReveal>
+            <h2 className="font-display text-[clamp(26px,4vw,40px)] font-extrabold text-white tracking-tight">
+              {t("Your ", "Tu ")}<span className="font-accent italic text-fuego">{t("dream home", "casa soñada")}</span>{t(" starts with one conversation.", " empieza con una conversación.")}
+            </h2>
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
+              <a href={`tel:${SITE.phone.replace(/[^0-9]/g, "")}`} className="bg-fuego text-white text-[14px] font-semibold rounded-lg px-7 py-3.5 hover:bg-fuego-dark transition-colors inline-flex items-center gap-2 shadow-[0_4px_16px_rgba(214,44,38,0.2)]">
+                <Phone size={15} />{t("Call Now", "Llama Ahora")}
+              </a>
+              <a href={`mailto:${SITE.email}`} className="text-calma/50 border border-calma/15 text-[14px] rounded-lg px-7 py-3.5 hover:border-calma/30 transition-colors inline-flex items-center gap-2">
+                <Mail size={15} />{t("Send Email", "Enviar Email")}
+              </a>
             </div>
-
-            {/* Contact info sidebar */}
-            <div className="lg:col-span-5">
-              <ScrollReveal delay={0.15}>
-                <div className="space-y-6">
-                  {/* Brand card */}
-                  <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6">
-                    <div className="font-display text-[18px] font-extrabold text-white tracking-tight mb-1">
-                      MI CASA <span className="text-fuego">DREAM</span>
-                    </div>
-                    <div className="text-white/25 text-[12px] mb-5">
-                      {SITE.agent} · {SITE.brokerage}
-                    </div>
-
-                    <div className="space-y-4">
-                      <a href={`tel:${SITE.phone.replace(/[^0-9]/g, "")}`} className="flex items-center gap-3 text-white/50 hover:text-white transition-colors group">
-                        <div className="w-9 h-9 rounded-lg bg-fuego/10 flex items-center justify-center text-fuego group-hover:bg-fuego/20 transition-colors">
-                          <Phone size={16} />
-                        </div>
-                        <div>
-                          <div className="text-[13px] font-semibold text-white">{SITE.phone}</div>
-                          <div className="text-[10px] text-white/25">{t("Call or text anytime", "Llama o envía texto")}</div>
-                        </div>
-                      </a>
-
-                      <a href={`mailto:${SITE.email}`} className="flex items-center gap-3 text-white/50 hover:text-white transition-colors group">
-                        <div className="w-9 h-9 rounded-lg bg-calma/10 flex items-center justify-center text-calma group-hover:bg-calma/20 transition-colors">
-                          <Mail size={16} />
-                        </div>
-                        <div>
-                          <div className="text-[13px] font-semibold text-white">{SITE.email}</div>
-                          <div className="text-[10px] text-white/25">{t("Email Pedro directly", "Correo directo a Pedro")}</div>
-                        </div>
-                      </a>
-
-                      <div className="flex items-start gap-3 text-white/50">
-                        <div className="w-9 h-9 rounded-lg bg-oro/10 flex items-center justify-center text-oro shrink-0">
-                          <MapPin size={16} />
-                        </div>
-                        <div>
-                          <div className="text-[13px] font-semibold text-white">{SITE.address}</div>
-                          <div className="text-[10px] text-white/25">{t("Office location", "Ubicación de oficina")}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Social */}
-                  <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6">
-                    <h3 className="text-[11px] font-semibold text-white/30 uppercase tracking-wider mb-3">
-                      {t("Follow Pedro", "Sigue a Pedro")}
-                    </h3>
-                    <div className="flex gap-3">
-                      <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/[0.04] flex items-center justify-center text-white/40 hover:bg-fuego/15 hover:text-fuego transition-all">
-                        <Instagram size={18} />
-                      </a>
-                      <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/[0.04] flex items-center justify-center text-white/40 hover:bg-fuego/15 hover:text-fuego transition-all">
-                        <Facebook size={18} />
-                      </a>
-                      <a href={SITE.social.tiktok} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/[0.04] flex items-center justify-center text-white/40 hover:bg-fuego/15 hover:text-fuego transition-all">
-                        <svg viewBox="0 0 24 24" width={18} height={18} fill="currentColor">
-                          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.7a8.22 8.22 0 0 0 4.76 1.52V6.77a4.83 4.83 0 0 1-1-.08z" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Trust strip */}
-                  <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center">
-                        <div className="text-oro font-display font-extrabold text-[20px]">5.0 ★</div>
-                        <div className="text-white/20 text-[10px]">{t("Google Rating", "Calificación")}</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-white font-display font-extrabold text-[20px]">18</div>
-                        <div className="text-white/20 text-[10px]">{t("5-Star Reviews", "Reseñas 5★")}</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-calma font-display font-extrabold text-[20px]">2</div>
-                        <div className="text-white/20 text-[10px]">{t("Languages", "Idiomas")}</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-fuego font-display font-extrabold text-[20px]">100%</div>
-                        <div className="text-white/20 text-[10px]">{t("Recommend", "Recomiendan")}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
