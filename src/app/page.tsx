@@ -40,50 +40,54 @@ function HeroSection() {
         <line x1="0" y1="60%" x2="60%" y2="0" stroke="#D62C26" strokeWidth="0.5" />
       </svg>
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center pt-28 pb-16">
-        {/* Language toggle — THE FEATURE. First thing. Big. */}
-        <div className="mb-10">
+      <div className="relative z-10 max-w-5xl mx-auto text-center pt-24 pb-10">
+        {/* Language toggle — THE FEATURE */}
+        <div className="mb-6">
           <LangToggle size="hero" />
         </div>
 
         {/* Overline with calma accent */}
-        <div className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.15em] uppercase text-calma mb-6">
+        <div className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.15em] uppercase text-calma mb-4">
           <div className="w-8 h-[1px] bg-calma/40" />
           {t(HERO.overline.en, HERO.overline.es)}
           <div className="w-8 h-[1px] bg-calma/40" />
         </div>
 
-        {/* GIANT brand name as the visual hero */}
-        <div className="relative mb-6">
-          <h1 className="font-display text-[clamp(56px,12vw,140px)] font-extrabold leading-[0.85] tracking-tighter">
+        {/* Brand name + headshot row */}
+        <div className="flex items-center justify-center gap-5 md:gap-8 mb-4">
+          <h1 className="font-display text-[clamp(48px,11vw,130px)] font-extrabold leading-[0.85] tracking-tighter text-left">
             <span className="text-white">MI CASA</span>
             <br />
             <span className="text-fuego">DREAM</span>
           </h1>
 
-          {/* Pedro headshot floating over the typography */}
-          <div className="absolute right-[5%] top-[15%] md:right-[8%] md:top-[10%] w-[100px] h-[100px] md:w-[140px] md:h-[140px] rounded-full overflow-hidden border-[3px] border-oro/40 shadow-[0_0_40px_rgba(212,165,32,0.15)] z-20">
-            <Image
-              src="/pedro-headshot.jpg"
-              alt="Pedro Giron"
-              fill
-              className="object-cover object-top"
-              priority
-            />
+          {/* Pedro headshot — clean circle, beside the type */}
+          <div className="relative shrink-0">
+            <div className="w-[90px] h-[90px] md:w-[130px] md:h-[130px] rounded-full overflow-hidden border-[3px] border-oro/40 shadow-[0_0_40px_rgba(212,165,32,0.15)]">
+              <Image
+                src="/pedro-headshot.jpg"
+                alt="Pedro Giron"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+            {/* Small calma ring accent */}
+            <div className="absolute -inset-2 rounded-full border border-calma/10" />
           </div>
         </div>
 
         {/* Subheadline — client focused */}
-        <p className="font-accent italic text-[clamp(20px,3vw,32px)] text-white/50 leading-snug max-w-xl mx-auto mb-4">
+        <p className="font-accent italic text-[clamp(18px,2.5vw,28px)] text-white/50 leading-snug max-w-xl mx-auto mb-3">
           {t(HERO.headline_accent.en, HERO.headline_accent.es)}
         </p>
 
-        <p className="text-white/30 text-[14px] md:text-[15px] leading-relaxed max-w-md mx-auto">
+        <p className="text-white/30 text-[13px] md:text-[14px] leading-relaxed max-w-md mx-auto">
           {t(HERO.sub.en, HERO.sub.es)}
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mt-10">
+        {/* CTAs — tighter, above the fold */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
           <Link
             href="/contact"
             className="bg-fuego text-white text-[13px] font-semibold rounded-lg px-7 py-3.5 hover:bg-fuego-dark transition-colors inline-flex items-center gap-2"
@@ -100,13 +104,13 @@ function HeroSection() {
           </a>
         </div>
 
-        <div className="mt-10 text-[10px] text-white/15 tracking-wide">
+        <div className="mt-6 text-[10px] text-white/15 tracking-wide">
           {SITE.brokerage} · {t("License", "Licencia")} #{SITE.license}
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-calma/30">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-calma/30">
         <div className="w-[1px] h-8 bg-gradient-to-b from-transparent to-calma/30" />
       </div>
     </section>
