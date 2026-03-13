@@ -32,8 +32,8 @@ export default function TestimonialsPage() {
             <span className="text-oro text-[24px] md:text-[28px] font-extrabold">{SITE.google.rating}</span>
             <div className="flex gap-0.5">{Array(5).fill(0).map((_,i) => <Star key={i} size={16} className="text-oro fill-oro" />)}</div>
           </div>
-          <div className="text-white/20 text-[13px]">{t(`${SITE.google.count} reviews on Google`, `${SITE.google.count} reseñas en Google`)}</div>
-          <div className="text-white/20 text-[13px]">100% {t("recommend on Facebook", "recomiendan en Facebook")}</div>
+          <div className="text-white/40 text-[13px]">{t(`${SITE.google.count} reviews on Google`, `${SITE.google.count} reseñas en Google`)}</div>
+          <div className="text-white/40 text-[13px]">100% {t("recommend on Facebook", "recomiendan en Facebook")}</div>
         </div>
       </section>
 

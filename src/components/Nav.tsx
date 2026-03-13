@@ -30,7 +30,7 @@ export default function Nav() {
               className={`text-[13px] font-medium transition-colors duration-300 ${
                 pathname === link.href
                   ? "text-oro"
-                  : "text-white/35 hover:text-white/70"
+                  : "text-white/50 hover:text-white/80"
               }`}
             >
               {lang === "en" ? link.en : link.es}
@@ -39,7 +39,7 @@ export default function Nav() {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-white/20">
+          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-white/35">
             <span className="text-oro">★ {SITE.google.rating}</span>
             <span className="text-calma/30">·</span>
             <span>{SITE.google.count}</span>
@@ -71,7 +71,7 @@ export default function Nav() {
               href={link.href}
               onClick={() => setOpen(false)}
               className={`block text-[15px] font-medium py-3 border-b border-white/5 ${
-                pathname === link.href ? "text-oro" : "text-white/35"
+                pathname === link.href ? "text-oro" : "text-white/50"
               }`}
             >
               {lang === "en" ? link.en : link.es}

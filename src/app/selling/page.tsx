@@ -175,26 +175,26 @@ function MarketSnapshot() {
       <div className="relative z-10 max-w-5xl mx-auto px-5 md:px-8">
         <div className="text-center mb-8">
           <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-oro mb-2">{t("Salem Market Right Now", "Mercado de Salem Ahora")}</div>
-          <p className="text-white/25 text-[12px]">{t("Why timing and pricing strategy matter", "Por qué la estrategia de tiempo y precio importa")}</p>
+          <p className="text-white/40 text-[12px]">{t("Why timing and pricing strategy matter", "Por qué la estrategia de tiempo y precio importa")}</p>
         </div>
         <div className="grid grid-cols-3 gap-4 md:gap-8">
           <div ref={price.ref} className="text-center">
             <div className="text-oro font-extrabold text-[28px] md:text-[40px] tracking-tight leading-none">${price.count}K</div>
-            <div className="text-white/25 text-[10px] md:text-[11px] mt-1">{t("Median Price", "Precio Medio")}</div>
+            <div className="text-white/40 text-[10px] md:text-[11px] mt-1">{t("Median Price", "Precio Medio")}</div>
             <div className="flex items-end justify-center gap-0.5 mt-3 h-5">
               {[35,45,42,55,50,65,75].map((h,j)=>(<div key={j} className="w-1 md:w-1.5 bg-oro/15 rounded-sm" style={{height:`${h}%`}} />))}
             </div>
           </div>
           <div ref={days.ref} className="text-center">
             <div className="text-calma font-extrabold text-[28px] md:text-[40px] tracking-tight leading-none">{days.count}</div>
-            <div className="text-white/25 text-[10px] md:text-[11px] mt-1">{t("Avg. Days on Market", "Días Promedio")}</div>
+            <div className="text-white/40 text-[10px] md:text-[11px] mt-1">{t("Avg. Days on Market", "Días Promedio")}</div>
             <svg className="w-full h-5 mt-3" viewBox="0 0 100 18" fill="none">
               <path d="M0 16 Q20 12,35 14 T60 8 T85 4 T100 2" stroke="#2D6B78" strokeWidth="1.5" strokeLinecap="round" opacity="0.3" />
             </svg>
           </div>
           <div ref={change.ref} className="text-center">
             <div className="text-fuego font-extrabold text-[28px] md:text-[40px] tracking-tight leading-none">+{(change.count / 10).toFixed(1)}%</div>
-            <div className="text-white/25 text-[10px] md:text-[11px] mt-1">{t("YoY Price Growth", "Crecimiento Anual")}</div>
+            <div className="text-white/40 text-[10px] md:text-[11px] mt-1">{t("YoY Price Growth", "Crecimiento Anual")}</div>
             <div className="flex items-center justify-center mt-3 h-5">
               <svg width="16" height="16" viewBox="0 0 16 16" className="text-fuego/30"><path d="M8 13V3m0 0l-3 3m3-3l3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
             </div>
